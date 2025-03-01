@@ -1,6 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { Heart } from 'lucide-react';
+import { Heart, Star } from 'lucide-react';
 import { motion, useMotionValue } from 'motion/react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -48,7 +48,7 @@ export function Card({
     ]);
 
     return (
-        <div className={cn('overflow-hidden max-w-fit', className)}>
+        <div className={cn('overflow-hidden max-w-fit group', className)}>
             <motion.div
                 className='flex'
                 style={{
@@ -72,11 +72,24 @@ export function Card({
                     <Link className='absolute bottom-2 right-2 bg-gray-500 p-2 rounded-full hover:bg-gray-700' href={'#'}>
                         <Heart size={20} className='text-white' />
                     </Link>
+                    {discount &&
+                        <Link className='absolute top-2 left-2 bg-black px-2 py-0.5 rounded-md text-white text-xs font-medium' href={'#'}>
+                            40% off
+                        </Link>}
                 </div>
                 <div className="flex flex-col">
                     <h2 className="font-bold line-clamp-2">{title}</h2>
                     {showDescription && description && <p className="text-gray-500">{description}</p>}
-                    <p className="text-gray-500 text-sm">({rate})</p>
+                    <div className="flex flex-row gap-1 items-center">
+                        <span className="flex flex-row gap-1 items-center">
+                            <Star size={12} fill='#000' />
+                            <Star size={12} fill='#000' />
+                            <Star size={12} fill='#000' />
+                            <Star size={12} />
+                            <Star size={12} />
+                        </span>
+                        <p className="text-gray-500 text-sm">({rate})</p>
+                    </div>
                     <div className="inline-flex gap-2 items-center">
                         <p className="font-medium text-sm text-gray-500">{price}</p>
                         {discount && <p className="text-gray-500 text-sm font-medium line-through">{discount}</p>}
