@@ -1,6 +1,6 @@
 'use client'
 
-import { ShoppingCart, Heart, Store, HomeIcon, Search, Star } from "lucide-react";
+import { Heart, Store, HomeIcon, Search, Star } from "lucide-react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import Link from "next/link";
 import { FormSearch } from "@/components/search";
@@ -8,9 +8,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/button";
 import { DropdownButton } from "@/components/ui/dropdown";
 import { useState, useEffect } from "react";
+import { Navbar } from "@/components/ui/navbar";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -24,25 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <nav className="flex justify-between py-6 mx-auto px-8 md:px-16 fixed top-0 right-0 left-0 bg-white z-10">
-        <div className="flex gap-8 items-center">
-          <Link href="#" className="text-2xl font-bold text-indigo-600">Shop</Link>
-          <Link href="#" className="text-gray-500 hover:text-black hidden md:block">Home</Link>
-          <Link href="#" className="text-gray-500 hover:text-black hidden md:block">About</Link>
-        </div>
-        {isScrolled && <FormSearch variant="secondary" />}
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex gap-2">
-            <Link href="#" className=" hover:bg-gray-200 rounded-full p-2.5">
-              <Heart size={20} />
-            </Link>
-            <Link href="#" className="hover:bg-gray-200 rounded-full p-2.5">
-              <ShoppingCart size={20} />
-            </Link>
-          </div>
-          <Button href={"#"} variant="secondary">Sign In</Button>
-        </div>
-      </nav>
+      <Navbar enableScrollEffect={true} />
 
       <header className="mt-24">
         <div className="flex flex-col gap-4 relative">
