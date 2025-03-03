@@ -31,9 +31,6 @@ export function Navbar({ enableScrollEffect = true }: NavbarProps) {
         };
     }, [enableScrollEffect]);
 
-    // Show FormSearch when:
-    // 1. On home page AND scrolled
-    // 2. On any other page (regardless of scroll)
     const showFormSearch = (isHomePage && isScrolled) || !isHomePage;
 
     return (
@@ -43,7 +40,7 @@ export function Navbar({ enableScrollEffect = true }: NavbarProps) {
                 <Link href="/" className="text-gray-500 hover:text-black hidden md:block">Home</Link>
                 <Link href="#" className="text-gray-500 hover:text-black hidden md:block">About</Link>
             </div>
-            {showFormSearch && <FormSearch variant="secondary" />}
+            {showFormSearch && <FormSearch variant="secondary" className="hidden md:block" />}
             <div className="flex items-center gap-4">
                 <div className="hidden md:flex gap-2">
                     <Link href="#" className="hover:bg-gray-200 rounded-full p-2.5">

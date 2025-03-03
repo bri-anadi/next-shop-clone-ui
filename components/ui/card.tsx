@@ -22,7 +22,6 @@ export type CardProps = {
 export function Card({
     gap = 8,
     direction = 'vertical',
-    reverse = false,
     className,
     imageUrl,
     title,
