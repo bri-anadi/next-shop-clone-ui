@@ -4,7 +4,7 @@ import { Card } from "./card";
 import { DropdownButton } from "./dropdown";
 import Link from "next/link";
 
-export async function CardSection() {
+export function CardSection() {
     return (
         <div className="flex flex-col gap-4">
             <div className="flex flex-row justify-between items-center">

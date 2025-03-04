@@ -15,7 +15,6 @@ export function Navbar({ enableScrollEffect = true }: NavbarProps) {
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
 
-    // Check if current page is home
     const isHomePage = pathname === "/";
 
     useEffect(() => {
