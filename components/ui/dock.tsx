@@ -21,9 +21,9 @@ import {
 } from 'react';
 import { cn } from '@/lib/utils';
 
-const DOCK_HEIGHT = 128;
+const DOCK_HEIGHT = 64;
 const DEFAULT_MAGNIFICATION = 80;
-const DEFAULT_DISTANCE = 150;
+const DEFAULT_DISTANCE = 0;
 const DEFAULT_PANEL_HEIGHT = 64;
 
 export type DockProps = {
@@ -112,7 +112,7 @@ function Dock({
           mouseX.set(Infinity);
         }}
         className={cn(
-          'mx-auto flex w-fit gap-4 rounded-2xl bg-gray-50 px-4 dark:bg-neutral-900',
+          'mx-auto flex w-fit gap-4 rounded-2xl bg-gray-50 px-4',
           className
         )}
         style={{ height: panelHeight }}

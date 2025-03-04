@@ -40,7 +40,7 @@ const data = [
 
 export function DockUI() {
     return (
-        <div className='md:hidden fixed bottom-2 left-1/2 max-w-full -translate-x-1/2'>
+        <div className='md:hidden fixed bottom-0 bg-gray-50 w-screen'>
             <Dock className='items-end pb-3'>
                 {data.map((item, idx) => (
                     <DockItem
