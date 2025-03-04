@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function CardHeader() {
     return (
-        <a href={'https://google.com'} className="cursor-pointer" legacyBehavior>
+        <Link href={'https://google.com'} className="cursor-pointer" legacyBehavior>
             <div className="aspect-square size-32 md:size-48 rounded-2xl overflow-hidden relative group">
                 <img
                     src='https://i.scdn.co/image/ab67616d00001e02bc1028b7e9cd2b17c770a520'
@@ -17,6 +17,6 @@ export function CardHeader() {
                     <Search size={20} className='text-white' />
                 </Link>
             </div>
-        </Lina>
+        </Link>
     );
 }

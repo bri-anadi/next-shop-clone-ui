@@ -12,6 +12,7 @@ import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { CardSection } from "@/components/ui/card-section";
 import { CardHeader } from "@/components/ui/card-header";
+import { DockUI } from "@/components/dock-ui";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -101,6 +102,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <DockUI />
       <Footer />
     </>
   );
